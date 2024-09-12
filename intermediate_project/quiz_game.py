@@ -1,4 +1,3 @@
-# List of quiz questions with multiple-choice answers
 questions= [
     {
         "question": "What is the largest planet in our solar system?",
@@ -22,29 +21,24 @@ questions= [
     }
 ]
 
-# Function to conduct the quiz
 def quiz(questions):
-    score = 0  # Initialize score
+    score = 0  
     
     for item in questions:
-        print(item["question"])  # Print the question
-        print("\n".join(item["choices"]))  # Print the choices
+        print(item["question"]) 
+        print("\n".join(item["choices"])) 
         
-        # Get and validate user input
         answer = input("Your answer (A/B/C/D): ").upper()
         while answer not in ["A", "B", "C", "D"]:
             print("Invalid input. Please enter A, B, C, or D.")
             answer = input("Your answer (A/B/C/D): ").upper()
         
-        # Check if the answer is correct
         if answer == item["answer"]:
             print("Correct!\n")
             score += 1
         else:
             print(f"Wrong! The correct answer was {item['answer']}.\n")
     
-    # Show the final score
     print(f"Quiz completed! You got {score} out of {len(questions)} correct.")
 
-# Run the quiz
 quiz(questions)
